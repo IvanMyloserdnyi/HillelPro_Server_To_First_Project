@@ -1,0 +1,13 @@
+{
+  "name": "hm_36",
+  "version": "1.0.0",
+  "description": "У данній домашній роботі будемо реалізовувати методы GET /POST на стороні бекенду",
+  "main": "script.js",
+  "scripts": {
+    "start": "nodemon script.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
