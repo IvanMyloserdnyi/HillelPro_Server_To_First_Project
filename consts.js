@@ -76,24 +76,22 @@ const likesCount = {
     min: 15,
     max: 200
 };
-const commentsCount = {
-    min: 1,
-    max: 12
-};//тут было число а не обьект,причина ошибки
+const commentsCount = comments.length
 const photosCount = {
     min: 1,
     max: 6
 };
 const publicationsCount = 26;
 
-const publications = new Array(publicationsCount).fill(null).map((_, i) => ({
+const photos = new Array(publicationsCount).fill(null).map((_, i) => ({
     id: i + 1,
     url: `photos/${i + 1}.jpg`,
     description: descriptions[i],
     likes: getRandomNumber(likesCount.min, likesCount.max),
-    comments: createComments(+getRandomNumber(commentsCount.min, commentsCount.max),photosCount,comments,names)
+    //comments: createComments(+getRandomNumber(commentsCount.min, commentsCount.max),photosCount,comments,names)
 }))
+const commentsArr = createComments(commentsCount,photosCount,comments,names)
 //   comments: createComments(+getRandomNumber(commentsCount.min, commentsCount.max),photosCount,comments,names)
 //FFFFFFFFFFuck!+
-module.exports = {publications,commentsCount,photosCount,comments,names}
+module.exports = {photos,commentsArr}
 
