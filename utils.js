@@ -10,4 +10,9 @@ function createComments(count,photosCount,comments,names) {
         name: names[getRandomNumber(0, names.length - 1)]
     }))
 }
-module.exports = {getRandomNumber,createComments}
+function setResponseParameters(response,statusCode,messageOrData) {
+    response.writeHead(statusCode, {'Content-Type': 'application/json'});
+    response.write(messageOrData);
+    response.end();
+}
+module.exports = {getRandomNumber,createComments,setResponseParameters}
